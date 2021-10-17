@@ -36,5 +36,6 @@ The knowledge graph stays up to date by periodically running web scrapers that g
 - [Intro to GraphQL](https://graphql.org/learn/)
 - [Learn GraphQL](https://www.howtographql.com)
 - [AutoScraper](https://github.com/alirezamika/autoscraper)
+- [AutoScraper Examples](https://gist.github.com/alirezamika/72083221891eecd991bbc0a2a2467673)
 
 ![test](./docs/assets/graph-visualization.jpg)
