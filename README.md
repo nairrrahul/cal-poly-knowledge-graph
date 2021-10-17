@@ -28,7 +28,7 @@ Visit [`http://127.0.0.1:5000/graphql`](http://127.0.0.1:5000/graphql) in your b
 
 ## Web Scrapers
 
-The knowledge graph stays up to date by periodically running web scrapers that grab updated information from external sources. You can run these web scrapers by calling `python scraper_data.py`. To write your own web scraper, add a new Python file to the `scrapers` directory. The [`CollegeScraper`](./scrapers/college_scraper.py) works as a good example template to get started.
+The knowledge graph stays up to date by periodically running web scrapers that grab updated information from external sources. You can run these web scrapers by calling `python scrape_data.py`. To write your own web scraper, add a new Python file to the `scrapers` directory. The [`CollegeScraper`](./scrapers/college_scraper.py) works as a good example template to get started.
 
 ## Resources
 

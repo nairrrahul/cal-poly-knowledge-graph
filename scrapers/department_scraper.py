@@ -32,6 +32,7 @@ class DepartmentScraper(Scraper):
             }
             result = scraper.build(url=url_i, wanted_dict=wanted)
             scraper.save(config_path)
+        scraper.load(config_path)
         for name, url in self.links.items():
             subsets = scraper.get_result_similar(url, group_by_alias=True)
             try:
