@@ -10,7 +10,7 @@ Clone the repository
 git clone https://github.com/calpoly-csai/cal-poly-knowledge-graph.git
 ```
 
-Set up the development environment
+Set up the development environment. Run these commands at the root of the `cal-poly-knowledge-graph` folder.
 
 ```bash
 conda env create --file environment.yml
@@ -24,7 +24,7 @@ Launch the development server
 python app.py
 ```
 
-Visit [`http://127.0.0.1:5000/graphql`](http://127.0.0.1:5000/graphql) in your browser to interact with the API. For more information about the GraphiQL UI, check out the [docs](https://github.com/graphql/graphiql/tree/main/packages/graphiql#readme)
+Visit [`http://127.0.0.1:5000/graphql`](http://127.0.0.1:5000/graphql) in your browser to interact with the API. For more information about how to query data using GraphQL, check out the [docs](https://graphql.org/learn/queries/). Visit the web scrapers section to get started with development.
 
 ## Web Scrapers
 
@@ -32,10 +32,12 @@ The knowledge graph stays up to date by periodically running web scrapers that g
 
 ## Resources
 
+- [BeautifulSoup](https://scribbleghost.net/2020/07/06/getting-started-with-beautiful-soup-4/)
+- [AutoScraper](https://github.com/alirezamika/autoscraper)
 - [GraphQL + Flask Tutorial](https://graphene-mongo.readthedocs.io/en/latest/tutorial.html)
 - [Intro to GraphQL](https://graphql.org/learn/)
 - [Learn GraphQL](https://www.howtographql.com)
 - [AutoScraper](https://github.com/alirezamika/autoscraper)
 - [AutoScraper Examples](https://gist.github.com/alirezamika/72083221891eecd991bbc0a2a2467673)
 
-![test](./docs/assets/graph-visualization.jpg)
+![Graph Visualization](./docs/assets/graph-visualization.jpg)

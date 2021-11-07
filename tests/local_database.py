@@ -180,5 +180,5 @@ The CDSM provides an opportunity for both statistics and computer science studen
     cs.curriculum = csc_courses
     cs.save()
 
-
-scrape_data.main()
+    # TODO: delete when done
+    scrape_data.main()

@@ -1,4 +1,4 @@
-from models import Department
+from models import College, Department, Program
 from autoscraper import AutoScraper
 import os
 from scraper import registry, Scraper
@@ -35,16 +35,40 @@ class DepartmentScraper(Scraper):
         scraper.load(config_path)
         for name, url in self.links.items():
             subsets = scraper.get_result_similar(url, group_by_alias=True)
+            prog_list = [
+                self.save_programs(i)
+                for i in list(
+                    set([j.encode("ascii", "ignore") for j in subsets["program"]])
+                )
+            ]
             try:
                 dept = Department.objects.get(name=name)
-                dept.programs = list(set(subsets["program"]))
+                dept.programs = prog_list
                 dept.courses = list(set(subsets["course"]))
-                dept.college = subsets["college"][-1]
+                dept.college = self.save_college(subsets["college"][-1])
                 dept.save()
             except:
                 Department(
                     name=name,
-                    programs=list(set(subsets["program"])),
+                    programs=prog_list,
                     courses=list(set(subsets["course"])),
-                    college=subsets["college"][-1],
+                    college=self.save_college(subsets["college"][-1]),
                 ).save()
+
+    def save_programs(self, prog_name):
+        try:
+            prog = Program.objects.get(name=prog_name)
+            return prog
+        except:
+            prog = Program(name=prog_name)
+            prog.save()
+            return prog
+
+    def save_college(self, college_name):
+        try:
+            college = College.objects.get(name=college_name)
+            return college
+        except:
+            college = College(name=college_name)
+            college.save()
+            return college
