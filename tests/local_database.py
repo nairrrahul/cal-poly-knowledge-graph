@@ -1,6 +1,5 @@
 # flask_graphene_mongo/database.py
 from mongoengine import connect
-import scrape_data
 from models import *
 
 connect("graphene-mongo-example", host="mongomock://localhost", alias="default")
@@ -179,6 +178,3 @@ The CDSM provides an opportunity for both statistics and computer science studen
 
     cs.curriculum = csc_courses
     cs.save()
-
-    # TODO: delete when done
-    scrape_data.main()
